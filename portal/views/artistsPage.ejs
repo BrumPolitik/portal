@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Artist Uploading</title>
+</head>
+
+<body>
+	<h1>To Upload artist to mongodb</h1>
+	<hr>
+	<div>
+		<form action="/API/artists" method="POST" enctype="application/x-www-form-urlencoded">
+			<div>
+				<label for="name">Artist Name</label>
+				<input type="text" id="name" placeholder="Name"
+					value="" name="name" required>
+			</div>
+			<div>
+				<label for="desc">Artist Description</label>
+				<input type="text" id="desc" name="desc" value="" rows="2"
+						placeholder="Description" required>
+            </input>
+			</div>
+            <div>
+				<label for="location">Location</label>
+				<input type="text" id="location" name="location" value=""
+						placeholder="Location" required>
+            </input>
+			</div>
+			<div>
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+	</div>
+
+	<hr>
+
+	<h1>Uploaded Artists</h1>
+	<div>
+		<% items.forEach(function(artist) { %>
+		<div>
+			<div>
+				<div>
+					<h5><%= artist.name %></h5>
+					
+
+
+<p><%= artist.desc %></p>
+<p><%= artist.location %></p>
+
+
+
+				</div>
+			</div>
+		</div>
+		<% }) %>
+	</div>
+</body>
+
+</html>
